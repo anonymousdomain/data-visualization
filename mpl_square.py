@@ -1,4 +1,10 @@
 import matplotlib.pyplot as plt
+import os 
+
+path=os.path.dirname(__file__)
+path_dir=os.path.join(path,'ploted_images')
+sample_file_name='mpl_sqaures'
+os.makedirs(path_dir,exist_ok=True)
 
 x_values = range(1,1000)
 y_values = [x**2 for x in x_values]
@@ -13,6 +19,5 @@ ax.set_ylabel('square NUmbers',fontsize=24)
 
 ax.tick_params('both',labelsize=14)
 # plt.show()
-
-plt.savefig('mpl_sqaures_plot.png',bbox_inches='tight')
+plt.savefig(os.path.join(path_dir,sample_file_name),bbox_inches='tight')
 plt.close()
