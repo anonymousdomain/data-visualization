@@ -1,0 +1,19 @@
+from random_walk import RandomWalk
+import matplotlib.pyplot as plt
+
+
+while True:
+    rw = RandomWalk()
+    rw.fill_walk()
+
+    plt.style.use('classic')
+    point=range(rw.points)
+    fig, ax = plt.subplots()
+
+    ax.scatter(rw.x_values, rw.y_values,c=point,cmap=plt.cm.Blues,edgecolors='none',s=15)
+
+    plt.show()
+    running=input("make another walk? y/n ")
+    if running=='n':
+        break
+    plt.close()
