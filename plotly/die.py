@@ -9,18 +9,19 @@ class Die:
         return randint(1, self.die_sides)
 
 
-die = Die()
-
+die1 = Die()
+die2 = Die(10)
+max_res=die1.die_sides+die2.die_sides
 results = []
 frequancey = []
 for i in range(100):
-    res = die.roll()
+    res = die1.roll()+die2.roll()
     results.append(res)
-for value in range(1, die.die_sides+1):
+for value in range(2, max_res+1):
     freq = results.count(value)
     frequancey.append(freq)
 
-x_v=list(range(1,die.die_sides+1))
+x_v=list(range(2,max_res+1))
 data=[Bar(x=x_v,y=frequancey)]
 
 x_axis={'title':'Result'}
