@@ -1,6 +1,5 @@
 from random import choice
-
-
+import os
 class RandomWalk:
     def __init__(self, points=5000):
         self.points = points
@@ -23,3 +22,9 @@ class RandomWalk:
 
             self.x_values.append(x)
             self.y_values.append(y)
+
+    def save_into_path(self, filename, plt):
+        path = os.path.dirname(__file__)
+        path_dir = os.path.join(path, 'ploted_images')
+        os.makedirs(path_dir, exist_ok=True)
+        plt.savefig(os.path.join(path_dir, filename))

@@ -3,10 +3,6 @@ import matplotlib.pyplot as plt
 import os
 
 while True:
-    path = os.path.dirname(__file__)
-    path_dir = os.path.join(path, 'ploted_images')
-    sample_file_name = 'random_walk'
-    os.makedirs(path_dir, exist_ok=True)
     rw = RandomWalk()
     rw.fill_walk()
 
@@ -22,8 +18,7 @@ while True:
                c='red', edgecolors='none', s=100)
     ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)
+    rw.save_into_path('random_walk_test',plt)
     running = input("make another walk? y/n ")
     if running == 'n':
         break
-    plt.savefig(os.path.join(path_dir, sample_file_name))
-    plt.close()
