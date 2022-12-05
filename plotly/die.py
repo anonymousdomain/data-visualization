@@ -28,4 +28,4 @@ x_axis={'title':'Result'}
 y_axis={'title':'frequncey of Result'}
 
 layout=Layout(title='Results of rolling one D6 100 times',xaxis=x_axis,yaxis=y_axis)
-offline.plot({'data':data,'layout':layout},filename='die.html')
+# offline.plot({'data':data,'layout':layout},filename='die.html')
